@@ -16,21 +16,25 @@ console.log('My todos:',todos)
 //build version 2 - functions
 var todos = ['item 1', 'item 2', 'item 3'];
 
+//display todos
 function displayTodos() {
     console.log('My todos:',todos);
 }
 
+//add todos
 function addTodo(todo) {
     todos.push(todo);
     displayTodos();
 }
 
+//change todos
 function changeTodo(position, newValue) {
  //todos[0] = 'some new value';
  todos[position] = newValue;
  displayTodos();
 }
 
+//delete todos
 function deleteTodo(position) {
     todos.splice(position, 1);
     displayTodos();
