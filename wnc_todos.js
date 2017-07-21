@@ -13,6 +13,7 @@ todos.splice(0,1)
 console.log('My todos:',todos) 
 */
 
+/*
 //build version 2 - functions
 var todos = ['item 1', 'item 2', 'item 3'];
 
@@ -47,4 +48,28 @@ changeTodo(0, 'changed');
 
 
 //displayTodos();
-deleteTodo(2);
+deleteTodo(2); */
+//end version 2 - functions
+
+
+//start version 3 - objects
+
+//store todos array on an object
+var todolist = {
+    todos: ['item 1', 'item 2', 'item 3'],
+    displayTodos: function () {
+        console.log("My Todos", this.todos);
+    },
+    addTodo: function(todo) {
+        this.todos.push(todo);
+        this.displayTodos();
+    }
+};
+
+//console.log(todolist);
+
+//display todos
+//console.log(todolist.displayTodos());
+
+//add method 
+todolist.addTodo('plunker');
