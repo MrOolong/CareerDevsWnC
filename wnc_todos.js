@@ -150,7 +150,14 @@ var todoList = {
         } else {
             console.log("My Todos:");
             for (var i = 0; i < this.todos.length; i++) {
-            console.log(this.todos[i].todoText);
+                console.log(this.todos[i].todoText);
+                
+                //check if .completed is true
+                if (this.todos[i].completed === true){    
+                    console.log('(x)', this.todos[i].todoText); //print with (x)
+                } else {
+                    console.log('()', this.todos[i].todoText); //print with ()
+                }
             }        
         }
         //print todos as normal
@@ -184,7 +191,13 @@ var todoList = {
 // todoList.addTodo('second');
 
 //v5 - req 2 - displayTodos should tell you if .todos is empty
-//todoList.displayTodos();
-todoList.addTodo('an item');
-todoList.deleteTodo(0);
+// //todoList.displayTodos();
+// todoList.addTodo('an item');
+// todoList.deleteTodo(0);
 //v5 - req 2 - complete
+
+//v5 - req 3 - displayTodos should show .completed
+todoList.addTodo('first');
+todoList.addTodo('second');
+todoList.toggleCompleted(1);
+
