@@ -105,8 +105,9 @@ var todoList = {
             });
         this.displayTodos();
     },
-    changeTodo: function(position, newValue) {
-        this.todos[position] = newValue;
+    changeTodo: function(position, todoText) {
+        //this.todos[position] = newValue; //no longer works, modifying below
+        this.todos[position].todoText = todoText;
         this.displayTodos();
     },
     deleteTodo: function(position) {
@@ -115,6 +116,12 @@ var todoList = {
     }
 };
 
+//part 1 req - call addTodo function to create object
+//todoList.addTodo('this is an object');
 
 
+//part 2 req - changeTodo should change the todoText property
+todoList.addTodo('first try');
+todoList.changeTodo(0, 'second try');
 
+//part 3 req -  toggleCompleted should flip the completed property
