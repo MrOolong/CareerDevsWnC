@@ -113,6 +113,11 @@ var todoList = {
     deleteTodo: function(position) {
         this.todos.splice(position, 1);
         this.displayTodos();
+    },
+    toggleCompleted: function(position) {
+        var todo = this.todos[position];
+        todo.completed = !todo.completed;
+        this.displayTodos();
     }
 };
 
@@ -121,7 +126,11 @@ var todoList = {
 
 
 //part 2 req - changeTodo should change the todoText property
-todoList.addTodo('first try');
-todoList.changeTodo(0, 'second try');
+// todoList.addTodo('first try');
+// todoList.changeTodo(0, 'second try');
 
 //part 3 req -  toggleCompleted should flip the completed property
+todoList.addTodo('boolean testing');
+todoList.toggleCompleted(0);
+
+//version 4 -booleans complete
