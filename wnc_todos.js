@@ -55,7 +55,7 @@ deleteTodo(2); */
 //start version 3 - objects
 
 //store todos array on an object
-var todolist = {
+var todoList = {
     todos: ['item 1', 'item 2', 'item 3'],
     displayTodos: function () {
         console.log("My Todos", this.todos);
@@ -63,13 +63,27 @@ var todolist = {
     addTodo: function(todo) {
         this.todos.push(todo);
         this.displayTodos();
+    },
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    },
+    deleteTodo: function(position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
     }
 };
 
-//console.log(todolist);
+//console.log(todoList);
 
-//display todos
+//display todos method
 //console.log(todolist.displayTodos());
 
 //add method 
-todolist.addTodo('plunker');
+//todolist.addTodo('plunker');
+
+//change to do list method
+//todoList.changeTodo(0, 'first');
+
+//delete a to do method
+todoList.deleteTodo(1);
