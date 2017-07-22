@@ -93,10 +93,61 @@ deleteTodo(2); */
 //start version 4 - boolean
 
 //addTodo should add objects
+// var todoList = {
+//     todos: [],
+//     displayTodos: function () {
+//         console.log("My Todos", this.todos);
+//     },
+//     addTodo: function(todoText) { //addTodo('hi')
+//         this.todos.push({
+//             todoText: todoText,  //(hi)
+//             completed: false
+//             });
+//         this.displayTodos();
+//     },
+//     changeTodo: function(position, todoText) {
+//         //this.todos[position] = newValue; //no longer works, modifying below
+//         this.todos[position].todoText = todoText;
+//         this.displayTodos();
+//     },
+//     deleteTodo: function(position) {
+//         this.todos.splice(position, 1);
+//         this.displayTodos();
+//     },
+//     toggleCompleted: function(position) {
+//         var todo = this.todos[position];
+//         todo.completed = !todo.completed;
+//         this.displayTodos();
+//     }
+// };
+
+//part 1 req - call addTodo function to create object
+//todoList.addTodo('this is an object');
+
+
+//part 2 req - changeTodo should change the todoText property
+// todoList.addTodo('first try');
+// todoList.changeTodo(0, 'second try');
+
+//part 3 req -  toggleCompleted should flip the completed property
+// todoList.addTodo('boolean testing');
+// todoList.toggleCompleted(0);
+
+//version 4 -booleans complete
+
+//version 5 - loops of logic
+//loop example
+// for (var i = 0; i < 3; i++) {
+//     console.log('hey');
+// }
+
 var todoList = {
     todos: [],
     displayTodos: function () {
-        console.log("My Todos", this.todos);
+        console.log("My Todos:");
+        for (var i = 0; i < this.todos.length; i++) {
+            console.log(this.todos[i].todoText);
+        }
     },
     addTodo: function(todoText) { //addTodo('hi')
         this.todos.push({
@@ -121,16 +172,9 @@ var todoList = {
     }
 };
 
-//part 1 req - call addTodo function to create object
-//todoList.addTodo('this is an object');
+//v5 - req 1 - displayTodos should show todoText
+// todoList.displayTodos();
+// todoList.addTodo('first');
+// todoList.addTodo('second');
 
-
-//part 2 req - changeTodo should change the todoText property
-// todoList.addTodo('first try');
-// todoList.changeTodo(0, 'second try');
-
-//part 3 req -  toggleCompleted should flip the completed property
-todoList.addTodo('boolean testing');
-todoList.toggleCompleted(0);
-
-//version 4 -booleans complete
+//v5 - req 2 - displayTodos should tell you if .todos is empty
