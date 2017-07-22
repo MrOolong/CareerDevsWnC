@@ -144,10 +144,16 @@ deleteTodo(2); */
 var todoList = {
     todos: [],
     displayTodos: function () {
-        console.log("My Todos:");
-        for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos.length === 0) {
+            console.log('Your todo list is empty!');
+        //else
+        } else {
+            console.log("My Todos:");
+            for (var i = 0; i < this.todos.length; i++) {
             console.log(this.todos[i].todoText);
+            }        
         }
+        //print todos as normal
     },
     addTodo: function(todoText) { //addTodo('hi')
         this.todos.push({
@@ -178,3 +184,7 @@ var todoList = {
 // todoList.addTodo('second');
 
 //v5 - req 2 - displayTodos should tell you if .todos is empty
+//todoList.displayTodos();
+todoList.addTodo('an item');
+todoList.deleteTodo(0);
+//v5 - req 2 - complete
