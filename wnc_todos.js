@@ -55,24 +55,24 @@ deleteTodo(2); */
 //start version 3 - objects
 
 //store todos array on an object
-var todoList = {
-    todos: ['item 1', 'item 2', 'item 3'],
-    displayTodos: function () {
-        console.log("My Todos", this.todos);
-    },
-    addTodo: function(todo) {
-        this.todos.push(todo);
-        this.displayTodos();
-    },
-    changeTodo: function(position, newValue) {
-        this.todos[position] = newValue;
-        this.displayTodos();
-    },
-    deleteTodo: function(position) {
-        this.todos.splice(position, 1);
-        this.displayTodos();
-    }
-};
+// var todoList = {
+//     todos: ['item 1', 'item 2', 'item 3'],
+//     displayTodos: function () {
+//         console.log("My Todos", this.todos);
+//     },
+//     addTodo: function(todo) {
+//         this.todos.push(todo);
+//         this.displayTodos();
+//     },
+//     changeTodo: function(position, newValue) {
+//         this.todos[position] = newValue;
+//         this.displayTodos();
+//     },
+//     deleteTodo: function(position) {
+//         this.todos.splice(position, 1);
+//         this.displayTodos();
+//     }
+// };
 
 //console.log(todoList);
 
@@ -86,4 +86,35 @@ var todoList = {
 //todoList.changeTodo(0, 'first');
 
 //delete a to do method
-todoList.deleteTodo(1);
+//todoList.deleteTodo(1);
+//end version 3 - objects
+
+
+//start version 4 - boolean
+
+//addTodo should add objects
+var todoList = {
+    todos: [],
+    displayTodos: function () {
+        console.log("My Todos", this.todos);
+    },
+    addTodo: function(todoText) { //addTodo('hi')
+        this.todos.push({
+            todoText: todoText,  //(hi)
+            completed: false
+            });
+        this.displayTodos();
+    },
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    },
+    deleteTodo: function(position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
+    }
+};
+
+
+
+
