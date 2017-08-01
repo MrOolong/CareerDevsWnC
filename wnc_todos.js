@@ -141,6 +141,69 @@ deleteTodo(2); */
 //     console.log('hey');
 // }
 
+// var todoList = {
+//     todos: [],
+//     displayTodos: function () {
+//         if (this.todos.length === 0) {
+//             console.log('Your todo list is empty!');
+//         //else
+//         } else {
+//             console.log("My Todos:");
+//             for (var i = 0; i < this.todos.length; i++) {
+//                 console.log(this.todos[i].todoText);
+                
+//                 //check if .completed is true
+//                 if (this.todos[i].completed === true){    
+//                     console.log('(x)', this.todos[i].todoText); //print with (x)
+//                 } else {
+//                     console.log('()', this.todos[i].todoText); //print with ()
+//                 }
+//             }        
+//         }
+//         //print todos as normal
+//     },
+//     addTodo: function(todoText) { //addTodo('hi')
+//         this.todos.push({
+//             todoText: todoText,  //(hi)
+//             completed: false
+//             });
+//         this.displayTodos();
+//     },
+//     changeTodo: function(position, todoText) {
+//         //this.todos[position] = newValue; //no longer works, modifying below
+//         this.todos[position].todoText = todoText;
+//         this.displayTodos();
+//     },
+//     deleteTodo: function(position) {
+//         this.todos.splice(position, 1);
+//         this.displayTodos();
+//     },
+//     toggleCompleted: function(position) {
+//         var todo = this.todos[position];
+//         todo.completed = !todo.completed;
+//         this.displayTodos();
+//     }
+// };
+
+//v5 - req 1 - displayTodos should show todoText
+// todoList.displayTodos();
+// todoList.addTodo('first');
+// todoList.addTodo('second');
+
+//v5 - req 2 - displayTodos should tell you if .todos is empty
+// //todoList.displayTodos();
+// todoList.addTodo('an item');
+// todoList.deleteTodo(0);
+//v5 - req 2 - complete
+
+//v5 - req 3 - displayTodos should show .completed
+// todoList.addTodo('first');
+// todoList.addTodo('second');
+// todoList.toggleCompleted(1);
+
+//version 6 - Thinking in code
+//Toggle all feature
+//If everything's true, make everything false
 var todoList = {
     todos: [],
     displayTodos: function () {
@@ -151,20 +214,18 @@ var todoList = {
             console.log("My Todos:");
             for (var i = 0; i < this.todos.length; i++) {
                 console.log(this.todos[i].todoText);
-                
-                //check if .completed is true
-                if (this.todos[i].completed === true){    
-                    console.log('(x)', this.todos[i].todoText); //print with (x)
-                } else {
-                    console.log('()', this.todos[i].todoText); //print with ()
+                    if (this.todos[i].completed === true){    
+                    console.log('(x)', this.todos[i].todoText);
+                }   else {
+                    console.log('()', this.todos[i].todoText); 
                 }
             }        
         }
-        //print todos as normal
+       
     },
-    addTodo: function(todoText) { //addTodo('hi')
+    addTodo: function(todoText) { 
         this.todos.push({
-            todoText: todoText,  //(hi)
+            todoText: todoText,  
             completed: false
             });
         this.displayTodos();
@@ -182,22 +243,40 @@ var todoList = {
         var todo = this.todos[position];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+    toggleAll: function() {
+        var totalTodos = this.todos.length;
+        var completedTodos = 0;
+        
+        //Get number of completed todos.
+        for (var i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+                completedTodos++;
+            }
+        }
+        
+        //Case 1: If everything's true, make everything false
+        if (completedTodos === totalTodos) {
+            //Make everything false
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = false;
+            }
+            //Case 2: Otherwise, make everything true.    
+            } else {
+                for (var i = 0; i < totalTodos; i++) {
+                    this.todos[i].completed
+                    
+                }
+            }
+        
+        this.displayTodos();
     }
 };
 
-//v5 - req 1 - displayTodos should show todoText
-// todoList.displayTodos();
 // todoList.addTodo('first');
 // todoList.addTodo('second');
+// todoList.toggleCompleted(0);
+// todoList.toggleCompleted(1);
 
-//v5 - req 2 - displayTodos should tell you if .todos is empty
-// //todoList.displayTodos();
-// todoList.addTodo('an item');
-// todoList.deleteTodo(0);
-//v5 - req 2 - complete
-
-//v5 - req 3 - displayTodos should show .completed
-todoList.addTodo('first');
-todoList.addTodo('second');
-todoList.toggleCompleted(1);
-
+//todoList.toggleAll();
+//todoList.displayTodos();
