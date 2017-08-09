@@ -9,11 +9,32 @@
     <body>
         <h1>Todo Lists</h1>
         
-        <button id="displayTodosButton">Display Todos</button>
-        <button id="toggleAllButton">Toggle All</button>
+        <div>
+            <button onclick="handlers.displayTodos()">Display Todos</button>
+            <button onclick="handlers.toggleAll()">Toggle All</button>
+        </div><br>
         
-        <button onclick="handlers.displayTodos()">Display Todos</button>
-        <button onclick="handlers.toggleAll()">Toggle All</button>
+        
+        <div>
+            <button onclick="handlers.addTodo()">Add</button>
+            <input type="text" name="" id="addTodoTextInput" />
+        </div><br>
+        
+        <div>
+            <button onclick="handlers.changeTodo()">Change Todo</button><br>
+            <input id="changeTodoPositionInput" type="number" name=""/>
+            <input id="changeTodoTextInput" type="text" name=""/>
+        </div><br>
+        
+        <div>
+            <button onclick="handlers.deleteTodo()">Delete</button>
+            <input id ="deleteTodoPositionInput" type="number"> 
+        </div><br>
+        
+        <div>
+            <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+            <input id="toggleCompletedPositionInput" type="number">
+        </div>
         
         <script src="wnc_todos.js"></script>
     </body>
